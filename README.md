@@ -33,35 +33,15 @@ Then, navigate to http://localhost:8000 in your browser.
 
 Exposing the Server Over WAN Using Flask and ngrok
 Setting Up Flask
-Ensure you have Python installed. Install Flask using pip if you haven't already:
+Ensure you have Python installed. Install Flask using pip if you haven't already
 
-```
-pip install Flask
-Create a simple Flask server script (app.py):
-```
 
-```
-from flask import Flask, send_from_directory
-
-app = Flask(__name__)
-
-@app.route('/')
-def serve_index():
-    return send_from_directory('.', 'index.html')
-
-@app.route('/<path:path>')
-def serve_file(path):
-    return send_from_directory('.', path)
-
-if __name__ == '__main__':
-    app.run(debug=True)
-Run the Flask server:
-
-```
 
 ```
 python app.py
+
 ```
+
 The server will start on http://localhost:5000.
 
 Using ngrok to Expose the Server
