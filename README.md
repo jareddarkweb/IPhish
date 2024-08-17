@@ -15,7 +15,7 @@ IPhish is a cybersecurity tool designed for hosting an iCloud login page for sec
 To install IPhish, clone the repository and navigate to the project directory:
 
 ```sh
-git clone https://github.com/your-username/IPhish.git
+git clone https://github.com/jareddarkweb/IPhish.git
 cd IPhish
 ```
 
