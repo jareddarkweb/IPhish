@@ -21,14 +21,10 @@ cd IPhish
 
 Usage
 
-Running the iCloud Login Page Locally
-Open index.html in a web browser to launch the iCloud login page.
-
-Optionally, you can set up a local server to host the page. For example, using Python's built-in HTTP server:
-
 ```
 python -m http.server 8000
 ```
+
 Then, navigate to http://localhost:8000 in your browser.
 
 Exposing the Server Over WAN Using Flask and ngrok
