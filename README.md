@@ -1,10 +1,9 @@
-<div style="text-align: center;">
-![IPhish logo]([https://markdown.land/wp-content/uploads/2021/06/markdown-512px.png](https://ibb.co/tZ7cMBg) "IPhish logo")
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  IPhish is a cybersecurity tool designed for hosting an iCloud login page for security research purposes. This tool is intended for ethical hacking and research only.
 
 
-
-IPhish is a cybersecurity tool designed for hosting an iCloud login page for security research purposes. This tool is intended for ethical hacking and research only.
 
 ## Features
 
@@ -68,5 +67,5 @@ For any questions or inquiries, please contact jared-calgary-cyber-security@wear
 
 
 
-z
+
 
