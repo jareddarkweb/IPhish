@@ -38,7 +38,7 @@ Ensure you have Python installed. Install Flask using pip if you haven't already
 
 
 ```
-python server.py
+python3 server.py
 
 ```
 
