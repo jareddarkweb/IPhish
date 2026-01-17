@@ -1,8 +1,4 @@
-To make this tool truly "plug-and-play" for other users, your README.md needs to be clear, professional, and explain exactly how to use the automated launcher.
 
-Create a file named README.md in your main IPhish folder and paste this in:
-
-Markdown
 
 # 🍎 IPhish - iCloud Research Tool
 
