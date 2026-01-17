@@ -1,6 +1,6 @@
 
 
-# 🍎 IPhish - iCloud Research Tool
+#  IPhish - iCloud Research Tool
 
 A streamlined, automated phishing simulation tool designed for security researchers and educational demonstrations. This tool automates the setup of a Flask backend, a SQLite database, and an encrypted public tunnel using Ngrok.
 
