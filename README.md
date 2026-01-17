@@ -1,74 +1,51 @@
+To make this tool truly "plug-and-play" for other users, your README.md needs to be clear, professional, and explain exactly how to use the automated launcher.
 
-![banner](https://github.com/jareddarkweb/IPhish/blob/main/assets/Untitled%20design(1).png?raw=true)
+Create a file named README.md in your main IPhish folder and paste this in:
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  IPhish is a cybersecurity tool designed for hosting an iCloud login page for security research purposes. This tool is intended for ethical hacking and research only.
+Markdown
 
+# 🍎 IPhish - iCloud Research Tool
 
+A streamlined, automated phishing simulation tool designed for security researchers and educational demonstrations. This tool automates the setup of a Flask backend, a SQLite database, and an encrypted public tunnel using Ngrok.
 
-## Features
+## 🚀 Quick Start (Linux & macOS)
 
-- Hosts a custom iCloud login page
-- Allows security researchers to study phishing techniques
-- Provides insights into security vulnerabilities
+To launch the tool, simply clone the repository and run the automated installer.
 
-## Installation
+1. **Clone the repo:**
+   ```bash
+   git clone [https://github.com/jareddarkweb/IPhish.git](https://github.com/jareddarkweb/IPhish.git)
+   cd IPhish
+Run the launcher:
 
-To install IPhish, clone the repository and navigate to the project directory:
+Bash
 
-```sh
-git clone https://github.com/jareddarkweb/IPhish.git
-cd IPhish
-```
+chmod +x run.sh
+./run.sh
+🛠️ Features
+Automated Setup: Automatically creates a Python Virtual Environment (venv) and installs all necessary libraries.
 
-Usage
+Ngrok Integration: Generates a public URL instantly so you can test outside your local network.
 
-```
-python3 -m http.server 5000
-```
+Secure Admin Portal: A private dashboard to view captured logs, protected by a customizable password.
 
-Then, navigate to http://localhost:8000 in your browser.
+Data Export: Download your research results directly as a .csv file for analysis in Excel.
 
-Exposing the Server Over WAN Using Flask and ngrok
-Setting Up Flask
-Ensure you have Python installed. Install Flask using pip if you haven't already
+🔑 Configuration
+The tool works out of the box, but you can customize it by creating a .env file:
 
+ADMIN_PASSWORD: Change the dashboard password (Default: admin123).
 
+NGROK_AUTH_TOKEN: Your Ngrok token (The script will ask for this on the first run).
 
-```
-python3 server.py
+📁 Project Structure
+server.py: The core Flask application logic.
 
-```
+run.sh: The "one-click" smart launcher.
 
-The server will start on http://localhost:5000.
+templates/: Contains the iCloud login page and Admin dashboard.
 
-Using ngrok to Expose the Server
-Download and install ngrok from ngrok.com.
+research_data.db: The local database where logs are stored (Generated after first run).
 
-Start ngrok and point it to your local Flask server:
-
-```
-ngrok http 5000
-```
-ngrok will provide a forwarding URL (e.g., http://abcd1234.ngrok.io). Use this URL to access your Flask server over the WAN.
-
-Disclaimer
-IPhish is intended for educational and ethical research purposes only. Unauthorized use of this tool for malicious purposes is strictly prohibited. The developers are not responsible for any misuse of this tool.
-
-Contributing
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Contact
-For any questions or inquiries, please contact jared-calgary-cyber-security@wearehackerone.com.
-
-
-
-
-
-
-
+⚠️ Disclaimer
+This tool is for educational purposes and authorized security testing only. Using this tool against targets without prior written consent is illegal. The developers assume no liability for misuse.

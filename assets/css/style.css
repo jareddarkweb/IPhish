@@ -1,54 +1,36 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f2f2f2;
-    margin: 0;
+background: url(...) no-repeat center center;
+@media (max-width: 768px) {
+    .login-form {
+        width: 280px;
+        padding: 25px;
+    }
 }
-.wrapper {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+@media (max-width: 480px) {
+    .login-form {
+        width: 260px;
+        padding: 20px;
+    }
 }
-#icon {
-    width: 100px;
-    height: auto;
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.remember-me-container {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start; /* Pushes content to the left */
+  width: 100%;                 /* Ensures it takes up the full width of the box */
+  gap: 8px;
+  margin-bottom: 20px;         /* Space between this and the Login button */
+  
+  /* Styling to match your dark/grey theme */
+  color: #bbbbbb; 
+  font-size: 13px;
+  cursor: pointer;
+  
+  /* Padding-left moves it slightly away from the very edge if needed */
+  padding-left: 2px; 
 }
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-input {
-    width: 100%;
-    margin-bottom: 10px;
-}
-.fadeIn {
-    transition: opacity 0.5s ease-in-out;
-}
-.fadeIn.first {
-    opacity: 1;
-}
-.fadeIn.second, .fadeIn.third, .fadeIn.fourth {
-    opacity: 1;
-}
-#formFooter {
-    text-align: center;
-    margin-top: 20px;
-}
-.underlineHover {
-    text-decoration: none;
-}
-.btn-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+
+.remember-me-container input[type="checkbox"] {
+  cursor: pointer;
+  /* Makes the checkmark color match your grey button */
+  accent-color: #555555; 
 }

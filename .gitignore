@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.db
+.env
+.python-version
+.DS_Store

